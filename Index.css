@@ -64,7 +64,7 @@
     padding: 5px;
     text-align: center;
     background: #ddd;
-    position:relative;
+    position: absolute;
     bottom:0;
     width: 100%;
     font-size: 10px;
