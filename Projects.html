@@ -12,7 +12,7 @@
 <body>
     <!-- Header -->
 <div class="header">
-    <h1>Welcome</h1>
+    <h2>Welcome</h2>
     <p>
       This website will have all the latest information about Joe Lindsey, including any projects that i am currently working on, my current occupation and access to my CV.
     </p>
@@ -22,14 +22,26 @@
   <div class="navbar">
     <a href="index.html">Home</a>
     <a href="CV.html">CV</a>
-    <a href="Projects.html">Projects</a>
+    <a class="highlighted" href="Projects.html">Projects</a>
   </div>
 
   <!-- The flexible grid (content) -->
   <div class="row">
     <div class="side">
       <h2>Dissertation Project - Fake News Analyser</h2>
-      <p>Explanation.</p>
+      <p>
+        For my dissertation project, i created a C# program that would analyse an inputted URL and Title from an article, as well as the author of the article. 
+        This particular theory came from a MIT article that i read that proposed the language used inside the URL and Title could help identify if an article was 
+        fake, or that the article would more likely be biased towards a certain agenda. The algorithm that would do this would be class based conditional statements to check the contents of the title and URL
+        and analyse the language and origin of the URL against a preset list of words and websites that have been flagged as fake news, or less reputable.
+      </p>
+      <img src="fakenewsarticle.jpg" width="500vw" height="450vh">
+      <p>
+        Feel free to check out the GitHub link below!
+      </p>
+      <a href="https://github.com/JoeLindsey3101/FakeNewsAnalyser" target="_blank">
+        <img src="github-mark.png" width="100" height="50">
+      </a>
     </div>
     <div class="main">
       <h2>Source code for this website.</h2>
@@ -39,6 +51,10 @@
       <h2>Visualization Project - Candlestick Chart + Radar Chart</h2>
       <p>Explanation.</p>
     </div>
+  </div>
+  <!-- Footer -->
+  <div class="footer">
+      <h3>Made By Joe Lindsey || joe71644@gmail.com </h3>
   </div>
 </body>
 </html>

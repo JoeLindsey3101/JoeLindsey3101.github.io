@@ -1,97 +1,95 @@
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  background-image: linear-gradient(to right, rgba(25, 25, 112, 0.5),rgba(25, 25, 112, 1) );
+  color: white;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 5px;
+  text-align: center;
+}
+
+.highlighted {
+  color: maroon;
+}
+/* Style the top navigation bar */
+.navbar {
+  display: flex;
+  justify-content: center;
   
-  /* Style the body */
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0;
-  }
-  
-  /* Header/logo Title */
-  .header {
-    padding: 5px;
-    text-align: center;
-    background: #1abc9c;
-    color: white;
-  }
-  
-  /* Style the top navigation bar */
+}
+/* Style the navigation bar links */
+.navbar a {
+  padding: 14px 20px;
+  text-decoration: none;
+  justify-content: center;
+  text-align: center;
+  color: lightblue;
+}
+/* Change color on hover */
+.navbar a:hover {
+  color: lightblue;
+}
+/* Column container */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+/* Main column */
+.main {
+  flex: 70%;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+/* Footer */
+.footer {
+  padding: 5px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 10px;
+}
+/* Social pictures (twitter || linkedin) */
+.Social-pics {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+/* changed settings for h2, h4 and p text blocks */
+h2 {
+  color: lightblue;
+}
+
+h4 {
+  text-align: center;
+  height: 100%;
+}
+p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row,
   .navbar {
-    display: flex;
-    background-color: #333;
-    justify-content: center;
+    flex-direction: column;
   }
-  
-  /* Style the navigation bar links */
-  .navbar a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  /* Change color on hover */
-  .navbar a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Column container */
-  .row {  
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  /* Create two unequal columns that sits next to each other */
-  /* Sidebar/left column */
-  .side {
-    flex: 30%;
-    background-color: #f1f1f1;
-    padding: 20px;
-  }
-  
-  /* Main column */
-  .main {
-    flex: 70%;
-    background-color: white;
-    padding: 20px;
-  }
-  
-  /* Footer */
-  .footer {
-    padding: 5px;
-    text-align: center;
-    background: #ddd;
-    position: absolute;
-    bottom:0;
-    width: 100%;
-    font-size: 10px;
-  }
-
-  .Social-pics {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-  }
-  .cv {
-    height: 100vh;
-    width: 100vw;
-  }
-  h4 {
-      text-align: center;
-      height: 100%;
-  }
-  p {
-      font
-  }
-  
-  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 700px) {
-    .row, .navbar {   
-      flex-direction: column;
-    }
-  }
+}
