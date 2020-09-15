@@ -7,7 +7,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
-  background-image: linear-gradient(to right, rgba(25, 25, 112, 0.5),rgba(25, 25, 112, 1) );
+  background-color: midnightblue;
   color: white;
 }
 
@@ -18,25 +18,28 @@ body {
 }
 
 .highlighted {
-  color: maroon;
+
 }
 /* Style the top navigation bar */
 .navbar {
   display: flex;
   justify-content: center;
-  
+  border-radius: 16px;
+  padding: 15px 20px;
+  border-radius: 16px;
+  box-shadow: -1rem 0 -1rem #000;
 }
 /* Style the navigation bar links */
 .navbar a {
   padding: 14px 20px;
-  text-decoration: none;
   justify-content: center;
   text-align: center;
+  text-decoration: none;
   color: lightblue;
 }
 /* Change color on hover */
 .navbar a:hover {
-  color: lightblue;
+  text-decoration: none;
 }
 /* Column container */
 .row {
@@ -49,12 +52,16 @@ body {
   flex: 30%;
   padding: 20px;
   flex-wrap: wrap;
+  border-radius: 16px;
+  box-shadow: -1rem 0 3rem #000;
 }
 /* Main column */
 .main {
   flex: 70%;
   padding: 20px;
   flex-wrap: wrap;
+  border-radius: 16px;
+  box-shadow: -1rem 0 3rem #000;
 }
 /* Footer */
 .footer {
@@ -64,6 +71,8 @@ body {
   bottom: 0;
   width: 100%;
   font-size: 10px;
+  border-radius: 16px;
+  box-shadow: -1rem 0 3rem #000;
 }
 /* Social pictures (twitter || linkedin) */
 .Social-pics {
@@ -80,10 +89,6 @@ h2 {
 h4 {
   text-align: center;
   height: 100%;
-}
-p {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
