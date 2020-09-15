@@ -81,6 +81,43 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+.card-author {
+  position: relative;
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  align-items: center;
+  margin: 3rem 0 0;
+}
+
+.author-avatar img {
+  display: block;
+  width: 90px;
+  height: 115px;
+  border-radius: 100%;
+  margin: 16px 10px;
+}
+
+.half-circle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 109px;
+  height: 65px;
+  fill: none;
+  stroke: lightblue;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.author-name {
+  position: relative;
+  left: 15%;
+
+}
+
+
+
 /* changed settings for h2, h4 and p text blocks */
 h2 {
   color: lightblue;
@@ -98,3 +135,5 @@ h4 {
     flex-direction: column;
   }
 }
+
+
