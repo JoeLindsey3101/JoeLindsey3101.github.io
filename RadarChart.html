@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v5.js"></script>
+        <script type="text/javascript" src="RadarChart.js"></script>
+        
+        <title>Radar Chart</title>
+        <style>
+            body {
+                overflow: hidden;
+                margin: 0;
+                font-size: 10px;
+            }
+
+            #chart {
+                position: absolute;
+                top: 50px;
+                left: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="window.location='Projects.html';">Click here to go back.</button>
+        <div id="body">
+            <div id="chart"></div>
+        </div>
+        <script>
+            //set the width and height of the chart to send in the cfg
+            var w = 700,
+                h = 400;
+            //set colour scale for legend
+            var colour = d3.scaleOrdinal(d3.schemeCategory10);
+
+            //Legend titles
+            var LegendCFG = [
+                "Hospital 1",
+                "Hospital 2",
+                "Hospital 3",
+                "Hospital 4",
+                "Hospital 5",
+            ];
+
+            //Data
+            var d = [
+                [
+                    { axis: "Running Cost (£kpw)", value: 20 },
+                    { axis: "Number of Beds", value: 300 },
+                    { axis: "Number of Nurses", value: 250 },
+                    { axis: "Number of Consultants", value: 30 },
+                ],
+                [
+                    { axis: "Running Cost (£kpw)", value: 15 },
+                    { axis: "Number of Beds", value: 120 },
+                    { axis: "Number of Nurses", value: 200 },
+                    { axis: "Number of Consultants", value: 20 },
+                ],
+                [
+                    { axis: "Running Cost (£kpw)", value: 30 },
+                    { axis: "Number of Beds", value: 180 },
+                    { axis: "Number of Nurses", value: 300 },
+                    { axis: "Number of Consultants", value: 40 },
+                ],
+                [
+                    { axis: "Running Cost (£kpw)", value: 35 },
+                    { axis: "Number of Beds", value: 480 },
+                    { axis: "Number of Nurses", value: 350 },
+                    { axis: "Number of Consultants", value: 50 },
+                ],
+                [
+                    { axis: "Running Cost (£kpw)", value: 45 },
+                    { axis: "Number of Beds", value: 420 },
+                    { axis: "Number of Nurses", value: 400 },
+                    { axis: "Number of Consultants", value: 60 },
+                ],
+            ];
+
+            //Options for the Radar chart, other than default
+            var mycfg = {
+                w: w,
+                h: h,
+                maxValue: 480,
+                levels: 6,
+                ExtraWidthX: 300,
+            };
+
+            //Call function to draw the Radar chart
+            RadarChart.draw("#chart", d, mycfg);
+
+            //initiate Legend
+            var svg = d3
+                .select("#body")
+                .selectAll("svg")
+                .append("svg")
+                .attr("width", w + 300)
+                .attr("height", h);
+
+            //Create the title for the legend
+            var text = svg
+                .append("text")
+                .attr("class", "title")
+                .attr("transform", "translate(90,0)")
+                .attr("x", w - 200)
+                .attr("y", 10)
+                .attr("font-size", "10px")
+                .attr("fill", "#404040")
+                .text(
+                    "Running costs of hospitals with various number of beds, nurses and consultants"
+                );
+
+            //Initiate Legend
+            var legend = svg
+                .append("g")
+                .attr("class", "legend")
+                .attr("height", 100)
+                .attr("width", 250)
+                .attr("transform", "translate(90,20)");
+            //Create colour squares
+            legend
+                .selectAll("rect")
+                .data(LegendCFG)
+                .enter()
+                .append("rect")
+                .attr("x", w - 65)
+                .attr("y", function (d, i) {
+                    return i * 20;
+                })
+                .attr("width", 10)
+                .attr("height", 10)
+                .style("fill", function (d, i) {
+                    return colour(i);
+                });
+            //Create text next to squares
+            legend
+                .selectAll("text")
+                .data(LegendCFG)
+                .enter()
+                .append("text")
+                .attr("x", w - 52)
+                .attr("y", function (d, i) {
+                    return i * 20 + 9;
+                })
+                .attr("font-size", "11px")
+                .attr("fill", "#737373")
+                .text(function (d) {
+                    return d;
+                });
+        </script>
+    </body>
+</html>

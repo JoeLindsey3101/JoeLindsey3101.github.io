@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      // date low open close high
+      ['02/01/2020', 28628, 28639, 28869, 28873],
+      ['03/01/2020', 28500, 28553, 28635, 28716],
+      ['06/01/2020', 28419, 28466, 28703, 28708],
+      ['07/01/2020', 28565, 28639, 28583, 28685],
+      ['08/01/2020', 28552, 28556, 28745, 28886],
+      ['09/01/2020', 28844, 28852, 28956, 28988],
+      ['10/01/2020', 28789, 28978, 28823, 29009],
+      ['13/01/2020', 28819, 28869, 28907, 28909],
+      ['14/01/2020', 28872, 28895, 28939, 29054],
+      ['15/01/2020', 28897, 28901, 29030, 29127],
+      ['16/01/2020', 29132, 29132, 29297, 29300],
+      ['17/01/2020', 29289, 29313, 29348, 29373],
+      ['21/01/2020', 29146, 29269, 29196, 29341],
+      ['22/01/2020', 29172, 29263, 29186, 29320],
+      ['23/01/2020', 28966, 29111, 29160, 29190],
+      ['24/01/2020', 28843, 29230, 28990, 29289],
+      ['27/01/2020', 28440, 28542, 28536, 28671],
+      ['28/01/2020', 28575, 28594, 28722, 28823],
+      ['29/01/2020', 28728, 28820, 28734, 28944],
+      ['30/01/2020', 28489, 28640, 28859, 28879],
+    ], true);
+
+    var options = {
+        title: 'Dow Jones Industrial Average - Jan. 2020',
+        legend:'none'
+    };
+
+    var chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+  }
+    </script>
+  </head>
+  <body>
+    <button onclick="window.location='Projects.html';">Click here to go back.</button>
+    <div id="chart_div" style="width: 900px; height: 700px;"></div>
+  </body>
+</html>
