@@ -67,9 +67,7 @@ body {
   font-size: 8px;
 }
 .cv {
-    height: 100%; 
-    width: 100%;
-    background-color: white;
+    height: 800px;
 }
 /* Social pictures (twitter || linkedin) */
 .Social-pics {
