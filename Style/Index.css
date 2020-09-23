@@ -67,7 +67,7 @@ body {
   font-size: 8px;
 }
 .cv {
-    height: 700px;
+    height: 800px;
 }
 /* Social pictures (twitter || linkedin) */
 .Social-pics {
@@ -113,5 +113,8 @@ a {
   .navbar {
     flex-direction: column;
     width: 100%;
+  }
+  .cv {
+    height: 640px;
   }
 }
