@@ -69,6 +69,7 @@ body {
 .cv {
     height: 100%; 
     width: 100%;
+    background-color: black;
 }
 /* Social pictures (twitter || linkedin) */
 .Social-pics {
