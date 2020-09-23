@@ -20,15 +20,12 @@ body {
 }
 /* Header/logo Title */
 .header {
-  padding: 5px;
-  text-align: center;
+  color: midnightblue;
 }
 /* Style the top navigation bar */
 .navbar {
   display: flex;
   justify-content: center;
-  border-radius: 16px;
-  box-shadow: -1rem 0 -1rem #000;
   height: 50px;
 }
 /* Style the navigation bar links */
@@ -57,7 +54,6 @@ body {
   padding: 20px;
   flex-wrap: wrap;
   border-radius: 16px;
-  box-shadow: -1rem 0 3rem #000;
 }
 /* Main column */
 .main {
@@ -76,8 +72,8 @@ body {
   height: 25px;
 }
 .cv {
-    height: 100%;
-}
+    height: 95%;
+  }
 /* Social pictures (twitter || linkedin) */
 .Social-pics {
   display: flex;
@@ -116,14 +112,16 @@ a {
   text-decoration: none;
   color: lightblue;
 }
+button {
+  background-color: white;
+  color: black;
+  border-radius: 12px;
+  border: 2px solid lightblue;
+}
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
   .row,
   .navbar {
-    flex-direction: column;
     width: 100%;
-  }
-  .cv {
-    height: 460px;
   }
 }
