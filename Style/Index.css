@@ -61,7 +61,7 @@ body {
   padding: 20px;
   flex-wrap: wrap;
   border-radius: 16px;
-  box-shadow: -1rem 0 3rem #000;
+  box-shadow: -0.5rem 0 3rem #000;
 }
 /* Footer */
 .footer {
