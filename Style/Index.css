@@ -26,11 +26,11 @@ body {
 .navbar {
   display: flex;
   justify-content: center;
-  height: 50px;
+  height: 80px;
 }
 /* Style the navigation bar links */
 .navbar a {
-  padding: 14px 20px;
+  padding: 25px 20px;
   justify-content: center;
   text-align: center;
   text-decoration: none;
@@ -51,9 +51,9 @@ body {
 /* Sidebar/left column */
 .side {
   flex: 30%;
-  padding: 20px;
+  padding: 25px;
   flex-wrap: wrap;
-  border-radius: 16px;
+  
 }
 /* Main column */
 .main {
@@ -93,12 +93,13 @@ body {
   display: block;
   width: 90px;
   height: 115px;
-  border-radius: 50%;
+  border-radius: 100%;
   margin: 16px 10px;
 }
 .author-name {
   position: relative;
-  left: 12%;
+  padding-left: 1rem;
+  left: 10%
 }
 /* changed settings for h2, h4 and p text blocks */
 h2 {
