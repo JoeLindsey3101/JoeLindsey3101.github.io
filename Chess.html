@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Joe Lindsey | My Website and Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" , content="width-device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Style/Index.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+      integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+      integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/Scripts/chess.js"></script>
+    <link rel="icon" href="/Images/favicon.ico" />
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header"></div>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <a href="index.html"><b>Home</b></a>
+      <a href="CV.html"><b>CV</b></a>
+      <a href="Projects.html"><b>Projects</b></a>
+    </div>
+
+    <!-- The flexible grid (content) -->
+
+    <div id="myBoard" style="width: 400px; margin: 0 auto"></div>
+
+    <script>
+      var board = null;
+      var game = new Chess();
+
+      function onDragStart(source, piece, position, orientation) {
+        // do not pick up pieces if the game is over
+        if (game.game_over()) return false;
+
+        // only pick up pieces for White
+        if (piece.search(/^b/) !== -1) return false;
+      }
+
+      function makeRandomMove() {
+        var possibleMoves = game.moves();
+
+        // game over
+        if (possibleMoves.length === 0) {
+          return;
+        }
+
+        var randomIdx = Math.floor(Math.random() * possibleMoves.length);
+        game.move(possibleMoves[randomIdx]);
+        board.position(game.fen());
+      }
+
+      function onDrop(source, target) {
+        // see if the move is legal
+        var move = game.move({
+          from: source,
+          to: target,
+          promotion: "q", // NOTE: always promote to a queen for example simplicity
+        });
+
+        // illegal move
+        if (move === null) return "snapback";
+
+        // make random legal move for black
+        window.setTimeout(makeRandomMove, 250);
+      }
+
+      // update the board position after the piece snap
+      // for castling, en passant, pawn promotion
+      function onSnapEnd() {
+        board.position(game.fen());
+      }
+
+      var config = {
+        draggable: true,
+        position: "start",
+        onDragStart: onDragStart,
+        onDrop: onDrop,
+        onSnapEnd: onSnapEnd,
+      };
+      board = Chessboard("myBoard", config);
+    </script>
+
+    <!-- Footer -->
+    <div class="footer">
+      <h3>Made By Joe Lindsey || joe71644@gmail.com</h3>
+    </div>
+  </body>
+</html>
